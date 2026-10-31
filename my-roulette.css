@@ -1,0 +1,389 @@
+
+/* WHAT NOW? — YOUR ROULETTE */
+
+.custom-roulette-page {
+  min-height: 100vh;
+  padding: 65px 24px;
+  box-sizing: border-box;
+}
+
+.custom-roulette-page h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  text-align: center;
+  margin: 0;
+}
+
+.custom-roulette-page h2 span {
+  color: #A78BFA;
+}
+
+.custom-roulette-intro {
+  text-align: center;
+  color: #B8B4C7;
+  margin: 20px 0 50px;
+  font-size: 18px;
+}
+
+.custom-roulette-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: 35px;
+  max-width: 1250px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.custom-roulette-panel {
+  min-width: 0;
+  background: #181822;
+  border: 1px solid #38384A;
+  border-radius: 22px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.custom-roulette-panel h3 {
+  color: #C4B5FD;
+  font-size: 23px;
+  margin-top: 0;
+}
+
+.custom-roulette-panel p {
+  color: #B8B4C7;
+  line-height: 1.6;
+}
+
+#custom-movie-form label {
+  display: block;
+  margin: 25px 0 10px;
+  font-weight: bold;
+}
+
+.custom-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+#custom-movie-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #48405F;
+  background: #292637;
+  color: white;
+  font-size: 15px;
+}
+
+.custom-input-row button {
+  margin: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+
+#custom-movie-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  display: grid;
+  gap: 10px;
+}
+
+#custom-movie-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #292637;
+  border: 1px solid #38384A;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+#custom-movie-list li span {
+  overflow-wrap: anywhere;
+}
+
+#custom-movie-list button {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #49347B;
+  flex-shrink: 0;
+}
+
+#custom-movie-count {
+  text-align: center;
+  color: #C4B5FD;
+}
+
+.custom-wheel-container {
+  position: relative;
+  width: min(100%, 570px);
+  margin: 20px auto 30px;
+}
+
+#custom-wheel {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.custom-wheel-pointer {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 38px solid white;
+  z-index: 2;
+}
+
+#custom-spin {
+  width: min(100%, 340px);
+  margin: 25px auto;
+  padding: 18px;
+  font-size: 18px;
+}
+
+#custom-spin:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#custom-winner {
+  text-align: center;
+  color: #C4B5FD;
+  font-size: 20px;
+  font-weight: bold;
+  min-height: 50px;
+  padding: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 850px) {
+  .custom-roulette-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-roulette-panel {
+    padding: 22px 16px;
+  }
+}
+
+/* =====================================
+   YOUR ROULETTE — ANIMATED CONFETTI
+   ===================================== */
+
+.confetti-piece {
+  position: fixed;
+  top: -25px;
+  left: 0;
+
+  width: 10px;
+  height: 16px;
+
+  pointer-events: none;
+  z-index: 9999;
+
+  opacity: 0;
+
+  animation: confetti-fall var(--duration) linear forwards;
+}
+
+@keyframes confetti-fall {
+
+
+
+  0% {
+    transform:
+      translate3d(0, -30px, 0)
+      rotate(0deg);
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translate3d(var(--drift), 110vh, 0)
+      rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece {
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* SMART MOVIE SEARCH */
+
+.custom-suggestions {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.custom-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  background: #292637;
+  border: 1px solid #48405F;
+  border-radius: 10px;
+  text-align: left;
+  color: white;
+  cursor: pointer;
+}
+
+.custom-suggestion:hover {
+  background: #49347B;
+}
+
+.custom-suggestion img {
+  width: 42px;
+  height: 63px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.custom-suggestion span {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* WINNER CARD */
+
+.custom-result-card {
+  background: #1A1A25;
+  border: 1px solid #48405F;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.custom-result-card[hidden] {
+  display: none;
+}
+
+.custom-result-card h3 {
+  color: #C4B5FD;
+  font-size: 26px;
+}
+
+.custom-result-card img {
+  display: block;
+  width: min(100%, 230px);
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+.custom-result-card h4 {
+  color: white;
+  font-size: 24px;
+}
+
+.custom-result-card p {
+  color: #B8B4C7;
+  line-height: 1.7;
+}
+
+/* =====================================
+   YOUR ROULETTE — WINNER POPUP
+   ===================================== */
+
+.custom-popup[hidden] {
+  display: none !important;
+}
+
+.custom-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(5, 5, 12, 0.85);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.custom-popup-card {
+  position: relative;
+  width: min(100%, 550px);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #1A1A25;
+  border: 1px solid #8B5CF6;
+  border-radius: 22px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  text-align: center;
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.25);
+}
+
+.custom-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+
+  background: #292637;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.custom-popup-card h3 {
+  color: #C4B5FD;
+  font-size: 28px;
+  margin: 10px 0 20px;
+}
+
+.custom-popup-card img {
+  display: block;
+  width: min(100%, 210px);
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
+
+.custom-popup-card h4 {
+  color: white;
+  font-size: 25px;
+  margin: 12px 0;
+}
+
+.custom-popup-card p {
+  color: #B8B4C7;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+@media (max-width: 600px) {
+  .custom-popup-card {
+    padding: 22px 15px;
+  }
+
+  .custom-popup-card h3 {
+    font-size: 23px;
+  }
+}

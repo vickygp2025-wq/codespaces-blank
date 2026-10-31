@@ -1,0 +1,1743 @@
+body {
+  background-color: #0B0B12;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #8B5CF6;
+}
+
+a:hover {
+  color: white;
+}
+
+
+button {
+  background-color: #8B5CF6;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 25px auto;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #A78BFA;
+}
+
+fieldset {
+  background-color: #181822;
+  border: 1px solid #333344;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 750px;
+}
+
+
+legend {
+  color: #A78BFA;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+fieldset:hover {
+  border-color: #8B5CF6;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #8B5CF6;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* MOOD SECTION */
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.mood-card {
+  background-color: #242433;
+  border: 1px solid #38384A;
+  border-radius: 12px;
+  padding: 20px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mood-card:hover {
+  background-color: #34344A;
+  border-color: #8B5CF6;
+}
+
+.mood-card input {
+  accent-color: #8B5CF6;
+}
+
+/* SELECTED MOOD */
+
+.mood-card:has(input:checked) {
+  background-color: #49347B;
+  border-color: #A78BFA;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 500px) {
+  .mood-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.mood-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.time-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* SERVICE SECTION */
+
+.service-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Hide the original checkbox squares */
+
+.mood-card input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Style the Other text box */
+
+#other-service {
+  display: block;
+  margin: 15px auto 0;
+  padding: 12px;
+  width: 80%;
+  max-width: 350px;
+  background-color: #242433;
+  color: white;
+  border: 1px solid #38384A;
+  border-radius: 8px;
+}
+
+/* Make keyboard focus visible */
+
+.mood-card:has(input:focus-visible) {
+  outline: 2px solid #C4B5FD;
+  outline-offset: 3px;
+}
+
+/* Hide the Other text box by default */
+
+.other-container {
+  display: none;
+}
+
+/* Show the box when Other is selected */
+
+fieldset:has(input[value="Other"]:checked) .other-container {
+  display: block;
+}
+
+/* COUNTRY SECTION */
+
+.country-label {
+  display: block;
+  color: #B8B4C7;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+#country {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #242433;
+  color: white;
+  border: 1px solid #38384A;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#country:hover {
+  border-color: #8B5CF6;
+}
+
+#country:focus {
+  outline: 2px solid #A78BFA;
+  outline-offset: 2px;
+}
+
+#country option,
+#country optgroup {
+  background-color: #242433;
+  color: white;
+}
+
+/* HEADER */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #292637;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #A78BFA;
+}
+
+/* NAVIGATION */
+
+.navigation {
+  display: flex;
+  gap: 30px;
+}
+
+.navigation a {
+  color: #A6A3B3;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.navigation a:hover {
+  color: white;
+}
+
+.navigation a.active {
+  color: #C4B5FD;
+  font-weight: bold;
+}
+
+/* HERO SECTION */
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  letter-spacing: -1.5px;
+}
+
+.hero h2 span {
+  color: #A78BFA;
+}
+
+.hero p {
+  color: #B8B4C7;
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+/* TMDB DISCLAIMER */
+
+.tmdb-disclaimer {
+  text-align: center;
+  color: #888899;
+  font-size: 12px;
+  margin: 20px auto 30px;
+  padding: 0 15px;
+}
+
+/* MOVIE ROULETTE */
+
+.roulette-hero {
+  padding-bottom: 35px;
+}
+
+.roulette-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px;
+}
+
+.roulette-card {
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 20px;
+  padding: 45px 30px;
+  width: 100%;
+  max-width: 340px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.roulette-icon {
+  color: #A78BFA;
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.roulette-card p {
+  color: #B8B4C7;
+  font-size: 16px;
+}
+
+#spin {
+  background-color: #B9A0F7;
+  color: #191124;
+  padding: 15px 40px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#spin:hover {
+  background-color: #D0BFFF;
+}
+
+/* RESULT AREA */
+
+.roulette-result {
+  display: none;
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.roulette-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.roulette-actions button {
+  margin: 0;
+  font-size: 13px;
+  padding: 10px 16px;
+}
+.roulette-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 60px;
+}
+.roulette-card {
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 20px;
+  padding: 45px 30px;
+  width: 100%;
+  max-width: 340px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#spin {
+  background-color: #B9A0F7;
+  color: #191124;
+}
+.roulette-result {
+  display: none;
+}
+
+.roulette-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* =========================
+   LIBRARY PAGE
+   ========================= */
+
+.library-page {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* LIBRARY TITLE */
+
+.library-page h2 {
+  font-size: 48px;
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: -1.5px;
+}
+
+.library-page > p {
+  color: #B8B4C7;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+/* COLLECTION NAVIGATION */
+
+.library-page nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.library-page nav a {
+  background-color: #242433;
+  color: #B8B4C7;
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid #38384A;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.library-page nav a:hover {
+  background-color: #49347B;
+  border-color: #A78BFA;
+  color: white;
+}
+
+/* SEARCH AND FILTERS */
+
+.library-page form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.library-page input,
+.library-page select {
+  background-color: #242433;
+  color: white;
+  border: 1px solid #38384A;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.library-page input:focus,
+.library-page select:focus {
+  outline: 2px solid #A78BFA;
+}
+
+/* COLLECTION HEADINGS */
+
+.library-page h3 {
+  font-size: 24px;
+  color: #A78BFA;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+/* COLLECTION LISTS */
+
+.library-page ul {
+  list-style: none;
+  padding: 25px;
+  margin: 0;
+  min-height: 100px;
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .library-page {
+    padding: 40px 15px;
+  }
+
+  .library-page h2 {
+    font-size: 34px;
+  }
+
+  .library-page form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .library-page input,
+  .library-page select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* MOVIE DNA PAGE */
+
+.dna-page {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* TITLE */
+
+.dna-page h2 {
+  font-size: 48px;
+  text-align: center;
+  margin: 20px 0;
+  letter-spacing: -1.5px;
+}
+
+.dna-page h2 span {
+  color: #A78BFA;
+}
+
+.dna-page > p {
+  color: #B8B4C7;
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+/* STATISTICS GRID */
+
+.dna-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* INDIVIDUAL CARDS */
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+/* NUMBERS */
+
+.stat-card dd {
+  color: #A78BFA;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  order: -1;
+}
+
+/* LABELS */
+
+.stat-card dt {
+  color: #B8B4C7;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* OTHER SECTIONS */
+
+.dna-page h3 {
+  color: white;
+  font-size: 22px;
+  margin-top: 35px;
+}
+
+.dna-page ul,
+.dna-page ol {
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+  padding: 25px 25px 25px 45px;
+  color: #B8B4C7;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .dna-page {
+    padding: 40px 15px;
+  }
+
+  .dna-page h2 {
+    font-size: 34px;
+  }
+
+  .dna-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TASTE TEST PAGE */
+
+.taste-page {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* INTRODUCTION */
+
+.taste-intro {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.taste-intro h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.taste-intro h2 span {
+  color: #A78BFA;
+}
+
+.taste-intro p {
+  color: #B8B4C7;
+  font-size: 16px;
+}
+
+/* QUESTION CARD */
+
+.taste-card {
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.taste-progress {
+  color: #A78BFA;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.taste-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.taste-card > p {
+  color: #B8B4C7;
+}
+
+/* AGE OPTIONS */
+
+.taste-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* CONTINUE BUTTON */
+
+#taste-next {
+  background-color: #B9A0F7;
+  color: #191124;
+  margin-top: 30px;
+}
+
+#taste-next:hover {
+  background-color: #D0BFFF;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .taste-page {
+    padding: 35px 15px;
+  }
+
+  .taste-intro h2 {
+    font-size: 32px;
+  }
+
+  .taste-card {
+    padding: 20px;
+  }
+}
+
+/* TEMPORARY TASTE TEST BUTTON */
+
+.taste-test-link {
+  text-align: center;
+  margin: 0 auto 35px;
+}
+
+.taste-test-button {
+  display: inline-block;
+  background-color: #B9A0F7;
+  color: #191124;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.taste-test-button:hover {
+  background-color: #D0BFFF;
+  color: #191124;
+}
+/* TASTE TEST STEP VISIBILITY */
+
+#taste-genres[hidden] {
+  display: none;
+}
+
+#taste-genres {
+  margin-top: 25px;
+}
+#taste-age[hidden] {
+  display: none;
+}
+/* GENRE PREFERENCES */
+
+.genre-card {
+  background-color: #242433;
+  border: 1px solid #38384A;
+  border-radius: 12px;
+  padding: 20px 10px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+.genre-card span {
+  color: #888899;
+  font-size: 13px;
+}
+
+.genre-card[data-preference="like"] {
+  background-color: #49347B;
+  border-color: #A78BFA;
+}
+
+.genre-card[data-preference="like"] span {
+  color: #C4B5FD;
+}
+
+.genre-card[data-preference="dislike"] {
+  background-color: #443039;
+  border-color: #B77A8A;
+}
+
+.genre-card[data-preference="dislike"] span {
+  color: #F2AAB8;
+}
+
+/* TASTE TEST INSTRUCTIONS */
+
+.taste-instructions {
+  background-color: #242433;
+  border: 1px solid #38384A;
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin: 20px 0;
+}
+
+.taste-instructions p {
+  color: #B8B4C7;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* SUBGENRE GROUPS */
+
+.subgenre-group {
+  margin-top: 25px;
+}
+
+.subgenre-group h4 {
+  color: #C4B5FD;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.subgenre-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* HIDE INACTIVE STEP */
+
+#taste-subgenres[hidden] {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .subgenre-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TMDB SETUP */
+
+.tmdb-setup {
+  background-color: #181822;
+  border: 1px solid #38384A;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 0 auto 25px;
+}
+
+.tmdb-setup h3 {
+  color: #A78BFA;
+  margin-top: 0;
+}
+
+.tmdb-setup p {
+  color: #B8B4C7;
+  font-size: 14px;
+}
+
+#tmdb-token {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #242433;
+  color: white;
+  border: 1px solid #38384A;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+#save-token {
+  background-color: #B9A0F7;
+  color: #191124;
+}
+
+/* MOVIE TASTE TEST */
+
+#taste-movies[hidden] {
+  display: none;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background-color: #242433;
+  border: 1px solid #38384A;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-card p {
+  color: white;
+  font-size: 15px;
+}
+
+@media (max-width: 500px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TASTE TEST MOVIE GRID */
+
+#taste-movies .movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+#taste-movies .movie-card {
+  min-width: 0;
+  padding: 10px;
+}
+
+#taste-movies .movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  #taste-movies .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+#tmdb-setup[hidden] {
+  display: none;
+}
+
+/* MOVIE RATING CONTROLS */
+
+.watched-button {
+  background-color: #242433;
+  color: white;
+  border: 1px solid #A78BFA;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.watched-button[data-watched="true"] {
+  background-color: #49347B;
+}
+
+.rating-box {
+  background-color: #181822;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.rating-box[hidden] {
+  display: none;
+}
+
+.rating-box label {
+  color: #B8B4C7;
+  font-size: 13px;
+}
+
+.rating-box select {
+  background-color: #242433;
+  color: white;
+  border: 1px solid #A78BFA;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+/* LAVENDER MOVIE RATING SLIDERS */
+
+.rating-box label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.rating-box input[type="range"] {
+  width: 100%;
+  margin: 8px 0;
+  cursor: pointer;
+  accent-color: #A78BFA;
+}
+
+.rating-number {
+  color: #A78BFA;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.rating-box {
+  padding: 18px;
+}
+
+.rating-box[hidden],
+#tmdb-setup[hidden] {
+  display: none;
+}
+
+/* TONIGHT RESULTS LOADING MESSAGE */
+
+#results article[hidden] {
+  display: none;
+}
+
+#results-message {
+  text-align: center;
+  color: #C4B5FD;
+  font-size: 17px;
+  padding: 30px 15px;
+}
+
+/* TONIGHT'S PICKS — MOVIE CARDS */
+
+#results {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+#results h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+#results article {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+
+  width: calc(33.333% - 24px);
+  margin: 0 10px 25px;
+
+  background: #1A1A25;
+  border: 1px solid #38384A;
+  border-radius: 18px;
+  padding: 18px;
+
+  box-sizing: border-box;
+}
+
+#results article[hidden] {
+  display: none;
+}
+
+#results article h3 {
+  color: #A78BFA;
+  text-align: center;
+  font-size: 19px;
+  margin: 0 0 18px;
+}
+
+#results article img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#results article h4 {
+  color: white;
+  text-align: center;
+  font-size: 19px;
+  margin: 18px 0 10px;
+}
+
+#results article p {
+  color: #B8B4C7;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+#results-message {
+  text-align: center;
+  color: #C4B5FD;
+  margin: 20px auto;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+  #results article {
+    display: flex;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+
+  #results h2 {
+    font-size: 28px;
+  }
+
+}
+
+/* TRY 3 MORE BUTTON */
+
+#try-more {
+  display: block;
+  margin: 30px auto;
+  padding: 15px 35px;
+
+  background: #8B5CF6;
+  color: white;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#try-more:hover {
+  background: #A78BFA;
+}
+
+#try-more[hidden] {
+  display: none;
+}
+
+
+/* TONIGHT — MOVIE INFORMATION */
+
+#results article .tonight-metadata {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 16px;
+
+  width: 100%;
+  margin: 12px 0 18px;
+
+  color: #B8B4C7;
+  font-size: 14px;
+  text-align: center;
+}
+
+#results article .tonight-metadata span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#results article .tonight-rating {
+  color: #C4B5FD;
+  font-weight: bold;
+}
+
+#results article .tonight-streaming {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: #292637;
+  border: 1px solid #38334A;
+  border-radius: 10px;
+
+  padding: 12px;
+  margin: 0 0 18px;
+
+  color: #D4C6F7;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#results article .tonight-description {
+  color: #B8B4C7;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 4px;
+  text-align: center;
+}
+
+#results article h4 {
+  margin-bottom: 6px;
+}
+
+/* WHAT NOW? — WATCHLIST BUTTON */
+
+#results article .watchlist-button {
+  display: block;
+  width: 100%;
+
+  margin-top: 18px;
+  padding: 14px 16px;
+
+  background: #A78BFA;
+  color: #181222;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+#results article .watchlist-button:hover:not(:disabled) {
+  background: #C4B5FD;
+}
+
+#results article .watchlist-button:disabled {
+  background: #292637;
+  color: #C4B5FD;
+  border: 1px solid #48405F;
+  cursor: default;
+}
+
+/* =====================================
+   WHAT NOW? — ROULETTE WHEEL
+   ===================================== */
+
+.roulette-wheel-container {
+  position: relative;
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
+  margin: 30px auto;
+}
+
+.roulette-wheel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  border: 7px solid #C4B5FD;
+
+  background: conic-gradient(
+    #8B5CF6 0deg 45deg,
+    #382451 45deg 90deg,
+    #A78BFA 90deg 135deg,
+    #57407A 135deg 180deg,
+    #7449B7 180deg 225deg,
+    #29213F 225deg 270deg,
+    #9F77EB 270deg 315deg,
+    #473263 315deg 360deg
+  );
+
+  box-shadow: 0 0 35px rgba(167, 139, 250, 0.25);
+
+  box-sizing: border-box;
+  transition: transform 4s cubic-bezier(
+    0.12, 0.7, 0.15, 1
+  );
+}
+
+.roulette-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #171420;
+  border: 3px solid #D4C6F7;
+
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.roulette-pointer {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 26px solid white;
+
+  z-index: 2;
+}
+
+/* ROULETTE — FORCE WHEEL VISIBILITY */
+
+.roulette-card .roulette-wheel-container {
+  display: block !important;
+  position: relative !important;
+  width: 300px !important;
+  max-width: 100% !important;
+  height: 300px !important;
+  margin: 30px auto !important;
+}
+
+.roulette-card .roulette-wheel {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  border: 7px solid #C4B5FD !important;
+  box-sizing: border-box !important;
+
+  background: conic-gradient(
+    #8B5CF6 0deg 45deg,
+    #382451 45deg 90deg,
+    #A78BFA 90deg 135deg,
+    #57407A 135deg 180deg,
+    #7449B7 180deg 225deg,
+    #29213F 225deg 270deg,
+    #9F77EB 270deg 315deg,
+    #473263 315deg 360deg
+  ) !important;
+}
+
+/* =====================================
+   ROULETTE — FULL SCREEN EXPERIENCE
+   ===================================== */
+
+/* Give Roulette its own large space */
+.roulette-section {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 24px 80px;
+}
+
+/* Remove the old narrow card limit */
+.roulette-section .roulette-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 45px 30px;
+  box-sizing: border-box;
+}
+
+/* Enlarge the wheel */
+.roulette-card .roulette-wheel-container {
+  width: min(550px, 80vw) !important;
+  height: min(550px, 80vw) !important;
+  max-width: none !important;
+  margin: 20px auto 35px !important;
+}
+
+/* Keep the circle perfectly round */
+.roulette-card .roulette-wheel {
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  border-radius: 50% !important;
+}
+
+/* Larger pointer */
+.roulette-card .roulette-pointer {
+  border-left-width: 20px;
+  border-right-width: 20px;
+  border-top-width: 35px;
+}
+
+/* Larger center */
+.roulette-card .roulette-center {
+  width: 85px;
+  height: 85px;
+  font-size: 38px;
+}
+
+/* Bigger spin button */
+#spin {
+  min-width: 280px;
+  padding: 20px 45px;
+  font-size: 19px;
+}
+
+/* Make the result match the larger design */
+.roulette-section .roulette-result {
+  width: 100%;
+  max-width: 650px;
+  padding: 35px;
+}
+
+/* Adapt to phones */
+@media (max-width: 600px) {
+
+  .roulette-section .roulette-card {
+    padding: 25px 12px;
+  }
+
+  .roulette-card .roulette-wheel-container {
+    width: min(340px, 82vw) !important;
+    height: min(340px, 82vw) !important;
+  }
+
+  #spin {
+    min-width: 0;
+    width: min(90%, 320px);
+  }
+}
+
+/* =====================================
+   ROULETTE — MOVIE RESULT REDESIGN
+   ===================================== */
+
+.roulette-section .roulette-result {
+  display: none;
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+  padding: 35px;
+  margin: 35px auto 0;
+
+  background: #1A1A25;
+  border: 1px solid #38384A;
+  border-radius: 20px;
+}
+
+.roulette-result-heading {
+  color: #C4B5FD;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 28px;
+}
+
+.roulette-movie-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 230px) minmax(0, 1fr);
+  align-items: center;
+  gap: 35px;
+  text-align: left;
+}
+
+.roulette-poster {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.roulette-movie-info {
+  min-width: 0;
+  text-align: left;
+}
+
+.roulette-movie-info h4 {
+  color: white;
+  font-size: 26px;
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.roulette-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.roulette-metadata span {
+  display: inline-block;
+  background: #292637;
+  color: #C4B5FD;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.roulette-movie-info p {
+  color: #B8B4C7;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* BUTTON LAYOUT */
+
+.roulette-section .roulette-result .roulette-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #38384A;
+}
+
+.roulette-section .roulette-result .roulette-actions button {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 15px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.roulette-section .roulette-result .roulette-actions .roulette-watch {
+  grid-column: 1 / -1;
+  background: #8B5CF6;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.roulette-section .roulette-result .roulette-actions .roulette-watch:hover {
+  background: #A78BFA;
+}
+
+.roulette-section .roulette-result .roulette-actions .roulette-secondary {
+  background: #292637;
+  color: white;
+  border: 1px solid #48405F;
+}
+
+.roulette-section .roulette-result .roulette-actions .roulette-secondary:hover:not(:disabled) {
+  background: #49347B;
+}
+
+.roulette-section .roulette-result .roulette-actions button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .roulette-section .roulette-result {
+    padding: 22px 16px;
+  }
+
+  .roulette-movie-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    justify-items: center;
+  }
+
+  .roulette-poster {
+    max-width: 210px;
+  }
+
+  .roulette-movie-info,
+  .roulette-movie-info h4,
+  .roulette-movie-info p {
+    text-align: center;
+  }
+
+  .roulette-metadata {
+    justify-content: center;
+  }
+
+  .roulette-section .roulette-result .roulette-actions {
+    gap: 10px;
+  }
+
+  .roulette-section .roulette-result .roulette-actions button {
+    font-size: 12px;
+    padding: 13px 8px;
+  }
+}
+
+/* ROULETTE COUNTRY SELECTOR */
+
+.roulette-country-box {
+  width: min(100%, 500px);
+  box-sizing: border-box;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+.roulette-country-box label {
+  display: block;
+  color: #C4B5FD;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+#roulette-country {
+  width: 100%;
+  box-sizing: border-box;
+  background: #292637;
+  color: white;
+  border: 1px solid #48405F;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+}
+
+/* ROULETTE STREAMING INFORMATION */
+
+.roulette-streaming-box {
+  background: #292637;
+  border: 1px solid #48405F;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 25px;
+  color: #D4C6F7;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.roulette-streaming-box strong {
+  display: block;
+  color: #C4B5FD;
+  font-size: 17px;
+}
+
+.roulette-streaming-box p {
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.roulette-streaming-box small {
+  display: block;
+  color: #B8B4C7;
+  font-size: 12px;
+}
+
+.roulette-streaming-box a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #C4B5FD;
+  font-weight: bold;
+}
+
+
+/* =====================================
+   WHAT NOW? — LIBRARY MOVIE CARDS
+   ===================================== */
+
+.library-page .library-movie-card {
+  background: #242433;
+  border: 1px solid #38384A;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  min-width: 0;
+}
+
+.library-page ul:has(.library-movie-card) {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(160px, 1fr)
+  );
+  gap: 18px;
+}
+
+.library-movie-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.library-movie-card h4 {
+  color: white;
+  font-size: 16px;
+  margin: 14px 0 8px;
+}
+
+.library-movie-card p {
+  color: #B8B4C7;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.library-movie-card button {
+  background: #49347B;
+  color: #FFFFFF;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.library-movie-card button:hover {
+  background: #8B5CF6;
+}
+
+.library-empty {
+  color: #B8B4C7;
+  text-align: center;
+  padding: 20px;
+}
+
+/* WHAT NOW? — LIBRARY FAVORITES */
+
+.library-page .library-favorite-button {
+  display: block;
+  width: 100%;
+
+  margin-top: 12px;
+  padding: 11px 8px;
+
+  background: #292637;
+  color: #C4B5FD;
+
+  border: 1px solid #48405F;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.library-page .library-favorite-button:hover {
+  background: #49347B;
+}
+
+.library-page .library-favorite-button.is-favorite {
+  background: #49347B;
+  color: #FFFFFF;
+  border-color: #A78BFA;
+}                                                                
+
+/* LIBRARY — PERSONAL RATINGS */
+
+.library-page .library-personal-rating {
+  color: #C4B5FD;
+  background: #292637;
+  border: 1px solid #48405F;
+  border-radius: 8px;
+
+  padding: 9px 6px;
+  margin: 10px 0;
+
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}

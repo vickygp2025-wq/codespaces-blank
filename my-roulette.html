@@ -1,0 +1,133 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Your Roulette — WHAT NOW?</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="my-roulette.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <h1 class="logo">
+      WHAT <span>NOW?</span>
+    </h1>
+
+    <nav class="navigation">
+      <a href="index.html">Tonight</a>
+      <a href="roulette.html">Roulette</a>
+      <a href="my-roulette.html">Your Roulette</a>
+      <a href="library.html">Library</a>
+      <a href="dna.html">Movie DNA</a>
+    </nav>
+
+  </header>
+
+  <main class="custom-roulette-page">
+
+    <h2>Your <span>Roulette.</span></h2>
+
+    <p class="custom-roulette-intro">
+      Your movies. Your wheel. Let fate decide.
+    </p>
+
+    <section class="custom-roulette-layout">
+
+      <div class="custom-roulette-panel">
+
+        <h3>Add your movies</h3>
+
+        <p>
+          Enter at least two movies.
+          Add as many as you want!
+        </p>
+
+        <form id="custom-movie-form">
+
+          <label for="custom-movie-input">
+            Movie title
+          </label>
+
+          <div class="custom-input-row">
+
+            <input
+              id="custom-movie-input"
+              type="text"
+              placeholder="e.g. Shrek"
+              maxlength="100"
+              required
+            >
+
+            <button type="submit">
+              + Add
+            </button>
+
+          </div>
+
+        </form>
+
+        <ul id="custom-movie-list"></ul>
+
+        <p id="custom-movie-count">
+          0 movies added
+        </p>
+
+      </div>
+
+      <div class="custom-roulette-panel">
+
+        <div class="custom-wheel-container">
+
+          <div class="custom-wheel-pointer"></div>
+
+          <canvas
+            id="custom-wheel"
+            width="600"
+            height="600"
+            aria-label="Movie selection wheel"
+          ></canvas>
+
+        </div>
+
+        <button
+          type="button"
+          id="custom-spin"
+          disabled
+        >
+          SPIN THE WHEEL
+        </button>
+
+        <div
+          id="custom-winner"
+          role="status"
+          aria-live="polite"
+        >
+          Add at least two movies to begin.
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="tmdb-disclaimer">
+      This product uses the TMDB API but is not
+      endorsed or certified by TMDB.
+    </p>
+  </footer>
+
+  <script src="my-roulette.js"></script>
+
+</body>
+</html>
+

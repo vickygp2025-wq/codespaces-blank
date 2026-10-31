@@ -1,0 +1,260 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Taste Test — WHAT NOW?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1 class="logo">
+            WHAT <span>NOW?</span>
+        </h1>
+    </header>
+
+    <main class="taste-page">
+
+        <section class="taste-intro">
+            <h2>Let's find out what you <span>like.</span></h2>
+            <p>A few quick questions before we get started.</p>
+        </section>
+
+<!-- TMDB SETUP -->
+
+<section class="tmdb-setup" id="tmdb-setup">
+
+    <h3>Connect to TMDB</h3>
+
+    <p>
+        Enter your TMDB Read Access Token
+        to load real movie posters.
+    </p>
+
+    <input
+        type="password"
+        id="tmdb-token"
+        placeholder="Paste your token here"
+        autocomplete="off"
+    >
+
+    <button type="button" id="save-token">
+        Connect TMDB
+    </button>
+
+    <p id="tmdb-status"></p>
+
+</section>
+
+        <section class="taste-card">
+
+            <p class="taste-progress">Step 1 of 4</p>
+
+            <!-- STEP 1: AGE -->
+
+            <div id="taste-age">
+
+                <h3>How old are you?</h3>
+                <p>Just an age range. No birthday needed.</p>
+
+                <div class="taste-options">
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="under13">
+                        Under 13
+                    </label>
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="13-17">
+                        13–17
+                    </label>
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="18-24">
+                        18–24
+                    </label>
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="25-34">
+                        25–34
+                    </label>
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="35-49">
+                        35–49
+                    </label>
+
+                    <label class="mood-card">
+                        <input type="radio" name="age" value="50plus">
+                        50+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- STEP 2: GENRES -->
+
+            <div id="taste-genres" hidden>
+
+                
+<h3>What do you like watching?</h3>
+
+<p>Tell us what you like and what you don't.</p>
+
+<div class="taste-instructions">
+    <p><strong>How to choose:</strong></p>
+    <p>1 click = Like</p>
+    <p>2 clicks = Dislike</p>
+    <p>3 clicks = Neutral</p>
+</div>
+
+
+                <div class="taste-options">
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Comedy"
+                            data-preference="neutral">
+                        Comedy
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Romance"
+                            data-preference="neutral">
+                        Romance
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Drama"
+                            data-preference="neutral">
+                        Drama
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Horror"
+                            data-preference="neutral">
+                        Horror
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Thriller"
+                            data-preference="neutral">
+                        Thriller
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Mystery"
+                            data-preference="neutral">
+                        Mystery
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Action"
+                            data-preference="neutral">
+                        Action
+                        <span>Neutral</span>
+                    </button>
+
+                    <button type="button"
+                            class="genre-card"
+                            data-genre="Sci-Fi"
+                            data-preference="neutral">
+                        Sci-Fi
+                        <span>Neutral</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+<!-- STEP 3: SUBGENRES -->
+
+<div id="taste-subgenres" hidden>
+
+    <h3>What kind of movies do you like?</h3>
+
+    <p>
+        Let's get a little more specific.
+        Leave anything you're unsure about as Neutral.
+    </p>
+
+    <div class="taste-instructions">
+        <p>How to choose:</p>
+        <p>1 click = Like</p>
+        <p>2 clicks = Dislike</p>
+        <p>3 clicks = Neutral</p>
+    </div>
+
+    <div id="subgenre-options"></div>
+
+</div>
+
+<!-- STEP 4: MOVIE RATINGS -->
+
+<div id="taste-movies" hidden>
+
+    <h3>Seen any of these?</h3>
+
+    <p>
+        Select the movies you've watched.
+        Then rate them from 1 to 10.
+    </p>
+
+    <p id="movie-status">
+        Loading movies...
+    </p>
+
+    <div id="movie-options" class="movie-grid"></div>
+
+    <button type="button" id="more-movies">
+        Show me 10 more
+    </button>
+
+<button type="button" id="personalized-movies">
+    Find 5 More for Me
+</button>
+
+
+</div>
+
+
+            <!-- CONTINUE BUTTON -->
+
+            <button type="button" id="taste-next">
+                Continue
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="tmdb-disclaimer">
+            This product uses the TMDB API but is not
+            endorsed or certified by TMDB.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

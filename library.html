@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library — WHAT NOW?</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    
+<header class="site-header">
+    <h1 class="logo">WHAT <span>NOW?</span></h1>
+
+    <nav class="navigation">
+        <a href="index.html">Tonight</a>
+        <a href="roulette.html">Roulette</a>
+        <a href="my-roulette.html">Your Roulette</a>
+        <a href="library.html" class="active">Library</a>
+        <a href="dna.html">Movie DNA</a>
+    </nav>
+</header>
+
+
+    <main class="library-page">
+      <h2>Your Library</h2>
+      <p>Everything you saved, watched and loved, in one place.</p>
+
+      <nav>
+        <a href="#watchlist">Watchlist</a>
+        <a href="#watched">Watched</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#shame">Shame List</a>
+      </nav>
+
+       <form>
+        <label for="search">Search</label>
+<input type="search" id="search" name="search" placeholder="Search by title..." autocomplete="off" />
+
+        <label for="kind">Type</label>
+        <select id="kind">
+          <option>All</option>
+          <option>Movies</option>
+          <option>TV Shows</option>
+        </select>
+
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option>Recently added</option>
+          <option>Rating</option>
+          <option>Title</option>
+        </select>
+      </form>
+
+      <h3 id="watchlist">Watchlist</h3>
+            <ul id="list-watchlist"></ul>   
+      <h3 id="watched">Watched</h3>
+            <ul id="list-watched"></ul>
+      <h3 id="favorites">Favorites</h3>
+            <ul id="list-favorites"></ul>
+      <h3 id="shame">Shame List</h3>
+            <ul id="list-shame"></ul>
+    </main>
+
+    <footer>
+      <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </footer>
+
+<script src="library.js"></script>
+  </body>
+</html>
+
